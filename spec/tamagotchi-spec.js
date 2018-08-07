@@ -50,6 +50,11 @@ describe('Tamagotchi', function(){
 
   it('should retun that the rest level goes up 50', function(){
 
-    expect(pet.goToBed()).toEqual("Got some sleep, and Rest Level went up 50.");
+    expect(pet.sleep()).toEqual("Got some sleep, and Rest Level went up 50.");
+  });
+
+  it('should up rest level by 50', function(){
+    pet.sleep();
+    expect(pet.restLevel).toEqual(125);
   });
 });

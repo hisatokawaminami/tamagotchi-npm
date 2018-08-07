@@ -74,16 +74,20 @@ export let pet = {
     }
   },
 
-  sleep: function(amount){
-    let that = this;
-    return function (){
-      that.restLevel += amount
-      return `Got some sleep, and Rest Level went up ${amount}.`
-    }
+  // sleep: function(amount){
+  //   let that = this;
+  //   return function (){
+  //     that.restLevel += amount
+  //     return `Got some sleep, and Rest Level went up ${amount}.`
+  //   }
+  // }
+  sleep: function(){
+    this.restLevel += 50;
+    return "Got some sleep, and Rest Level went up 50."
   }
 
 };
 
 pet.eatSmall = pet.feed(5);
 pet.playSmall = pet.hang(5);
-pet.goToBed = pet.sleep(50);
+// pet.goToBed = pet.sleep(50);
