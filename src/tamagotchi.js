@@ -7,18 +7,18 @@ export let pet = {
   setHunger: function() {
     const hungerInterval = setInterval(() => {
       this.foodLevel--;
-      if (this.starved() == true){
+      if (this.starved() == "Your pet got starved"){
         clearInterval(hungerInterval);
         return "Your pet got starved";
       }
-    }, 1000);
+    }, 100);
   },
 
   starved: function() {
     if (this.foodLevel > 0){
       return false;
     } else {
-      return true;
+      return "Your pet got starved";
     }
   },
 
@@ -66,7 +66,7 @@ export let pet = {
     }
   },
 
-  hang: function(amount){
+  play: function(amount){
     let that = this;
     return function(play){
       that.attentionLevel += amount
@@ -89,5 +89,5 @@ export let pet = {
 };
 
 pet.eatSmall = pet.feed(5);
-pet.playSmall = pet.hang(5);
+pet.playSmall = pet.play(5);
 // pet.goToBed = pet.sleep(50);
